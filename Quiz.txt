@@ -1,0 +1,46 @@
+import javax.swing.JOptionPane;
+//String resposta = JOptionPane.showInputDialog(null, pergunta);
+//JOptionPane.showMessageDialog(null, mensagem);
+
+class Main {
+  int cont = 0;
+
+  public static void main(String[] args) {
+    Main m = new Main();
+    String pergunta1 = "Jooj";
+    String resposta1 = "hmmm pizza";
+    String pergunta2 = "titio tem doce no carro?";
+    String resposta2 = "Sim na vanzinha branca";
+    String pergunta3 = "Praticar esportes?";
+    String resposta3 = "SIM";
+    String pergunta4 = "Precisa de portfolio ou não?";
+    String resposta4 = "Não";
+
+    JOptionPane.showMessageDialog(null, "Bem vindo ao quiz maneiro!");
+    m.pergunta(pergunta1, resposta1);
+    m.pergunta(pergunta2, resposta2);
+    m.pergunta(pergunta3, resposta3);
+    m.pergunta(pergunta4, resposta4);
+
+    m.exibeQtdAcertos();
+
+  }
+
+  public void pergunta(String pergunta, String respostaCerta){
+    String resposta = JOptionPane.showInputDialog(null,pergunta);
+    if(resposta.equals(respostaCerta)){
+      cont++;
+      JOptionPane.showMessageDialog(null, "Acertou!");
+    }
+    else{
+      JOptionPane.showMessageDialog(null, "Errou!");
+    }
+  }
+  public void exibeQtdAcertos(){
+    String texto = "Acertou "+cont+" questões!";
+    if(cont == 1){
+      texto = "Acertou 1 questão!";
+    }
+    JOptionPane.showMessageDialog(null, texto);
+  }
+}
